@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
 
   const handleSearch = (query: string) => {
     if (query.trim()) {
@@ -28,14 +29,40 @@ const Index = () => {
       {/* Navbar - Fixed at top */}
       <Navbar onSearch={handleSearch} onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
+      {/* Desktop Sidebar Toggle Button */}
+      <button
+        onClick={() => setDesktopSidebarOpen(!desktopSidebarOpen)}
+        className="hidden lg:flex fixed top-20 left-4 z-40 p-2 bg-card border rounded-lg shadow-lg hover:bg-secondary transition-colors"
+        aria-label={desktopSidebarOpen ? "Ocultar menú lateral" : "Mostrar menú lateral"}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-primary"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
       {/* Layout with Sidebar */}
       <div className="flex">
-        {/* Sidebar - Only visible on large screens by default */}
-        <div className="hidden lg:block lg:w-64 flex-shrink-0" aria-label="Navegación lateral">
-          <div className="fixed top-16 h-[calc(100vh-4rem)] overflow-y-auto">
-            <Sidebar isOpen={true} onClose={() => {}} />
+        {/* Desktop Sidebar - Collapsible */}
+        {desktopSidebarOpen && (
+          <div className="hidden lg:block lg:w-64 flex-shrink-0" aria-label="Navegación lateral">
+            <div className="fixed top-16 h-[calc(100vh-4rem)] overflow-y-auto">
+              <Sidebar isOpen={true} onClose={() => {}} />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Mobile Sidebar */}
         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />

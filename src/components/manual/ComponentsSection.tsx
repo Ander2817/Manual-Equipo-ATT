@@ -11,7 +11,6 @@ interface Component {
   category: string;
   description: string;
   status: 'operativo' | 'mantenimiento' | 'critico';
-  lastMaintenance: string;
 }
 
 const components: Component[] = [
@@ -22,7 +21,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Gabinete Lenovo modelo A54, código LKDNBRY',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-002',
@@ -30,7 +28,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Memoria RAM Samsung 133Mhz',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-003',
@@ -38,7 +35,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Disco Duro Seagate 3160815AS, 149.1GB, Serial: 5RA4JPNV',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-004',
@@ -46,7 +42,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Tarjeta Madre Lenovo modelo 8705A54',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-005',
@@ -54,7 +49,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Unidad Toshiba (TSST) TS-H4a2C 48X, código 41A9629',
     status: 'mantenimiento',
-    lastMaintenance: '2024-09-30',
   },
   {
     id: 'hw-006',
@@ -62,7 +56,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Fuente de poder LITEON genérica 225W',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-007',
@@ -70,7 +63,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Procesador Intel Pentium 1.60 Ghz',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-008',
@@ -78,7 +70,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Puertos USB Intel ICH7',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'hw-009',
@@ -86,7 +77,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Puertos PCI Intel ICH7',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   // Hardware - Periféricos
   {
@@ -95,7 +85,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Monitor Lenovo modelo 9227-AD1, Serial: V1V5637',
     status: 'mantenimiento',
-    lastMaintenance: '2024-10-01',
   },
   {
     id: 'per-002',
@@ -103,7 +92,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Teclado Lenovo KU-0225, código 0248795',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'per-003',
@@ -111,7 +99,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Mouse Lenovo MO28U02, código 44C0788018',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   {
     id: 'per-004',
@@ -119,7 +106,6 @@ const components: Component[] = [
     category: 'Hardware',
     description: 'Altavoces Lenovo LXB-1203A, código 070410',
     status: 'operativo',
-    lastMaintenance: '2024-10-15',
   },
   // Software
   {
@@ -128,7 +114,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Sistema Operativo Linux Lite versión 3.8, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
   {
     id: 'sw-002',
@@ -136,7 +121,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Suite Ofimática LibreOffice versión 5.1.6.2, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
   {
     id: 'sw-003',
@@ -144,7 +128,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Compresor Gzip versión 1.6, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
   {
     id: 'sw-004',
@@ -152,7 +135,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Adobe Reader PDF Viewer versión 3.18.2, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
   {
     id: 'sw-005',
@@ -160,7 +142,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Navegador Mozilla Firefox versión 88.0, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
   {
     id: 'sw-006',
@@ -168,7 +149,6 @@ const components: Component[] = [
     category: 'Software',
     description: 'Reproductor multimedia VLC versión 2.2.2, Licencia Libre',
     status: 'operativo',
-    lastMaintenance: '2024-11-01',
   },
 ];
 
@@ -299,7 +279,6 @@ export const ComponentsSection = () => {
                   <TableHead className="font-bold">Nombre</TableHead>
                   <TableHead className="font-bold">Categoría</TableHead>
                   <TableHead className="font-bold">Descripción</TableHead>
-                  <TableHead className="font-bold">Último mantenimiento</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -320,17 +299,11 @@ export const ComponentsSection = () => {
                       <TableCell className="max-w-xs text-sm text-muted-foreground">
                         {comp.description}
                       </TableCell>
-                      <TableCell>
-                        <div className="space-y-1">
-                          <div className="text-sm">{comp.lastMaintenance}</div>
-                          {getStatusBadge(comp.status)}
-                        </div>
-                      </TableCell>
                     </TableRow>
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={6} className="text-center py-12 text-muted-foreground">
+                    <TableCell colSpan={5} className="text-center py-12 text-muted-foreground">
                       No se encontraron componentes con los filtros aplicados.
                     </TableCell>
                   </TableRow>
