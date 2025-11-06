@@ -4,6 +4,7 @@ import { Sidebar } from '@/components/manual/Sidebar';
 import { Hero } from '@/components/manual/Hero';
 import { IntroSection } from '@/components/manual/IntroSection';
 import { ScopeSection } from '@/components/manual/ScopeSection';
+import { CommunityInfoSection } from '@/components/manual/CommunityInfoSection';
 import { CommunitySection } from '@/components/manual/CommunitySection';
 import { ComponentsSection } from '@/components/manual/ComponentsSection';
 import { TeamSection } from '@/components/manual/TeamSection';
@@ -72,6 +73,7 @@ const Index = () => {
           <Hero />
           <IntroSection />
           <ScopeSection />
+          <CommunityInfoSection />
           <CommunitySection />
           <ComponentsSection />
           <TeamSection />
