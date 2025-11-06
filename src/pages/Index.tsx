@@ -7,6 +7,7 @@ import { ScopeSection } from '@/components/manual/ScopeSection';
 import { CommunityInfoSection } from '@/components/manual/CommunityInfoSection';
 import { CommunitySection } from '@/components/manual/CommunitySection';
 import { ComponentsSection } from '@/components/manual/ComponentsSection';
+import ComponentFunctionsSection from '@/components/manual/ComponentFunctionsSection';
 import { TeamSection } from '@/components/manual/TeamSection';
 import { Footer } from '@/components/manual/Footer';
 import { toast } from 'sonner';
@@ -76,6 +77,7 @@ const Index = () => {
           <CommunityInfoSection />
           <CommunitySection />
           <ComponentsSection />
+          <ComponentFunctionsSection />
           <TeamSection />
           <Footer />
         </main>
