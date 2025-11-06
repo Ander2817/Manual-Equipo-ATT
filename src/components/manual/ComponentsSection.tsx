@@ -188,9 +188,9 @@ export const ComponentsSection = () => {
     };
 
     const labels: Record<Component['status'], string> = {
-      operativo: 'Operativo',
-      mantenimiento: 'En mantenimiento',
-      critico: 'Crítico',
+      operativo: 'Bueno',
+      mantenimiento: 'Regular',
+      critico: 'Malo',
     };
 
     return (
@@ -320,21 +320,21 @@ export const ComponentsSection = () => {
             <div className="flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-accent" aria-hidden="true" />
               <div>
-                <div className="font-medium text-foreground">Operativo</div>
+                <div className="font-medium text-foreground">Bueno</div>
                 <div className="text-sm text-muted-foreground">Funcionando correctamente</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <AlertCircle className="h-5 w-5 text-yellow-500" aria-hidden="true" />
               <div>
-                <div className="font-medium text-foreground">En mantenimiento</div>
+                <div className="font-medium text-foreground">Regular</div>
                 <div className="text-sm text-muted-foreground">Requiere intervención programada</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <XCircle className="h-5 w-5 text-destructive" aria-hidden="true" />
               <div>
-                <div className="font-medium text-foreground">Crítico</div>
+                <div className="font-medium text-foreground">Malo</div>
                 <div className="text-sm text-muted-foreground">Requiere atención inmediata</div>
               </div>
             </div>
