@@ -5,6 +5,7 @@ import { Hero } from '@/components/manual/Hero';
 import { IntroSection } from '@/components/manual/IntroSection';
 import { MaintenanceGuideSection } from '@/components/manual/MaintenanceGuideSection';
 import { ScopeSection } from '@/components/manual/ScopeSection';
+import { ToolsSection } from '@/components/manual/ToolsSection';
 import { CommunityInfoSection } from '@/components/manual/CommunityInfoSection';
 import { CommunitySection } from '@/components/manual/CommunitySection';
 import { ComponentsSection } from '@/components/manual/ComponentsSection';
@@ -76,6 +77,7 @@ const Index = () => {
           <IntroSection />
           <MaintenanceGuideSection />
           <ScopeSection />
+          <ToolsSection />
           <CommunityInfoSection />
           <CommunitySection />
           <ComponentsSection />

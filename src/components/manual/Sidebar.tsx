@@ -12,6 +12,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { id: 'intro', label: '¿Qué es el mantenimiento?', icon: Info },
     { id: 'maintenance-guide', label: 'Guía para el Mantenimiento', icon: Wrench },
     { id: 'scope', label: 'El mantenimiento que haremos', icon: CheckSquare },
+    { id: 'tools', label: 'Herramientas para Mantenimiento', icon: Wrench },
     { id: 'community-info', label: 'Información de la comunidad', icon: Info },
     { id: 'community', label: 'Información a la comunidad', icon: Users },
     { id: 'components', label: 'Componentes', icon: Cpu },
