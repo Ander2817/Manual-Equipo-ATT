@@ -104,29 +104,6 @@ export const CommunityInfoSection = () => {
           </Card>
         </div>
 
-        {/* Historical Review Continuation */}
-        <Card className="p-8 mb-12 shadow-lg max-w-6xl mx-auto">
-          <div className="text-muted-foreground leading-relaxed text-justify space-y-4">
-            <p>
-              Se dieron inicio a las actividades complementarías, a través de las cuales se crearon los 
-              clubes de mantenimiento, disciplina, biblioteca, cruz roja, cartelera, danzas, ciencia, 
-              voleibol, futbolito y la Banda Show. Se dictaron cursos de tarjetería, encuadernación y 
-              organización de eventos; se realizaron talleres de crecimiento personal con acompañamiento 
-              de la FUNDACIÓN DE APOYO A LA JUVENTUD ESTUDIANTIL (FAJES) y de formación integral al 
-              estudiante, bajo orientaciones de la fundación PROVIVE (PV).
-            </p>
-            <p>
-              También se apertura el ciclo diversificado, mención Ciencias en 1997, teniéndose así la 
-              ocasión de introducir una nueva oportunidad de estudio en el Municipio Ribas del Estado Aragua.
-            </p>
-            <p>
-              Actualmente la UNIDAD EDUCATIVA NACIONAL VICENTE EMILIO SOJO, es un liceo piloto para los 
-              diferentes cambios educativos propuestos por el Ministerio del Poder Popular para la Educación, 
-              razón por la cual no está ajena en la aplicación del PROCESO DE TRANSFORMACIÓN PEDAGÓGICA-CURRICULAR 
-              EN EDUCACIÓN MEDIA.
-            </p>
-          </div>
-        </Card>
 
         {/* Vision and Mission */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">

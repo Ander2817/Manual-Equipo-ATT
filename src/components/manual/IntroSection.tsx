@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
-import { Shield, Wrench, TrendingUp, AlertCircle } from 'lucide-react';
+import { Shield, Wrench, AlertCircle } from 'lucide-react';
 
 export const IntroSection = () => {
   const maintenanceTypes = [
@@ -19,14 +19,6 @@ export const IntroSection = () => {
       description: 'Reparaciones realizadas después de detectar una falla o avería.',
       details: 'Este tipo de mantenimiento se aplica cuando un equipo ya ha fallado. Incluye diagnóstico del problema, reparación o reemplazo de componentes dañados y pruebas de funcionamiento.',
       benefits: ['Restaura funcionalidad', 'Soluciona problemas inmediatos', 'Aprende de fallas', 'Actualiza registros'],
-    },
-    {
-      id: 'predictivo',
-      title: 'Mantenimiento Predictivo',
-      icon: TrendingUp,
-      description: 'Uso de tecnología para predecir cuándo ocurrirán fallas.',
-      details: 'Utiliza sensores, análisis de datos y monitoreo continuo para detectar cambios en el rendimiento que indican una falla inminente. Permite intervenir justo a tiempo.',
-      benefits: ['Optimiza recursos', 'Minimiza interrupciones', 'Reduce costos', 'Aumenta eficiencia'],
     },
   ];
 

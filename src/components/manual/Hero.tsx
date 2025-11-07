@@ -31,7 +31,7 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-4">
             <BookOpen className="h-4 w-4 text-white" aria-hidden="true" />
-            <span className="text-sm text-white font-medium">Versión 2024 - Actualizado</span>
+            <span className="text-sm text-white font-medium">Versión 2025 - Actualizado</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
@@ -39,7 +39,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Guía completa para el mantenimiento preventivo, correctivo y predictivo de equipos e instalaciones comunitarias
+            Guía completa para el mantenimiento preventivo y correctivo de equipos e instalaciones comunitarias
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">

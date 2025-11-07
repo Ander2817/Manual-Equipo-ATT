@@ -22,16 +22,6 @@ interface ComponentInfo {
 
 const internalComponents: ComponentInfo[] = [
   {
-    id: "gabinete",
-    name: "Gabinete",
-    image: gabinetteImg,
-    description: "Es la estructura que alberga y protege los componentes internos esenciales, como la placa base, el procesador, la memoria, el disco duro y la fuente de alimentación.",
-    commonFailures: [
-      "Golpes o abolladuras que dificultan cerrar o abrir la tapa.",
-      "Mala ventilación por acumulación de polvo o mala ubicación (causa sobrecalentamiento)."
-    ]
-  },
-  {
     id: "memoria-ram",
     name: "Memoria RAM",
     image: ramImg,
@@ -84,6 +74,16 @@ const internalComponents: ComponentInfo[] = [
 ];
 
 const externalComponents: ComponentInfo[] = [
+  {
+    id: "gabinete",
+    name: "Gabinete",
+    image: gabinetteImg,
+    description: "Es la estructura que alberga y protege los componentes internos esenciales, como la placa base, el procesador, la memoria, el disco duro y la fuente de alimentación.",
+    commonFailures: [
+      "Golpes o abolladuras que dificultan cerrar o abrir la tapa.",
+      "Mala ventilación por acumulación de polvo o mala ubicación (causa sobrecalentamiento)."
+    ]
+  },
   {
     id: "monitor",
     name: "Monitor",
