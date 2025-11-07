@@ -5,8 +5,8 @@ import { Hero } from '@/components/manual/Hero';
 import { IntroSection } from '@/components/manual/IntroSection';
 import { SafetySection } from '@/components/manual/SafetySection';
 import { MaintenanceGuideSection } from '@/components/manual/MaintenanceGuideSection';
-import { ScopeSection } from '@/components/manual/ScopeSection';
 import { ToolsSection } from '@/components/manual/ToolsSection';
+import { GlossarySection } from '@/components/manual/GlossarySection';
 import { CommunityInfoSection } from '@/components/manual/CommunityInfoSection';
 import { CommunitySection } from '@/components/manual/CommunitySection';
 import { ComponentsSection } from '@/components/manual/ComponentsSection';
@@ -32,12 +32,12 @@ const Index = () => {
         <IntroSection />
         <SafetySection />
         <MaintenanceGuideSection />
-        <ScopeSection />
         <ToolsSection />
         <CommunityInfoSection />
         <CommunitySection />
         <ComponentsSection />
         <ComponentFunctionsSection />
+        <GlossarySection />
         <TeamSection />
         <Footer />
       </main>

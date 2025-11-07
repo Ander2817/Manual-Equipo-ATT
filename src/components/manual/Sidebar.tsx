@@ -1,5 +1,6 @@
-import { X, Home, Info, CheckSquare, Users, Cpu, UserCheck, Wrench, ShieldCheck } from 'lucide-react';
+import { X, Home, Info, CheckSquare, Users, Cpu, UserCheck, Wrench, ShieldCheck, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -12,12 +13,12 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { id: 'intro', label: '¿Qué es el mantenimiento?', icon: Info },
     { id: 'safety', label: 'Normas de Seguridad', icon: ShieldCheck },
     { id: 'maintenance-guide', label: 'Guía para el Mantenimiento', icon: Wrench },
-    { id: 'scope', label: 'El mantenimiento que haremos', icon: CheckSquare },
     { id: 'tools', label: 'Herramientas para Mantenimiento', icon: Wrench },
     { id: 'community-info', label: 'Información de la comunidad', icon: Info },
     { id: 'community', label: 'Información a la comunidad', icon: Users },
     { id: 'components', label: 'Componentes', icon: Cpu },
     { id: 'funciones-componentes', label: 'Funciones de los componentes', icon: Cpu },
+    { id: 'glossary', label: 'Glosario de Términos', icon: BookOpen },
     { id: 'team', label: 'Equipo desarrollador', icon: UserCheck },
   ];
 
@@ -60,26 +61,28 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </Button>
         </div>
 
-        <nav className="p-4" aria-label="Navegación por secciones">
-          <ul className="space-y-2">
-            {menuItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <li key={item.id}>
-                  <button
-                    onClick={() => handleNavigation(item.id)}
-                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors hover:bg-secondary group"
-                  >
-                    <Icon className="h-5 w-5 text-primary group-hover:text-primary" aria-hidden="true" />
-                    <span className="text-sm text-foreground group-hover:text-foreground">
-                      {item.label}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <ScrollArea className="h-[calc(100vh-80px)]">
+          <nav className="p-4" aria-label="Navegación por secciones">
+            <ul className="space-y-2">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => handleNavigation(item.id)}
+                      className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors hover:bg-secondary group"
+                    >
+                      <Icon className="h-5 w-5 text-primary group-hover:text-primary" aria-hidden="true" />
+                      <span className="text-sm text-foreground group-hover:text-foreground">
+                        {item.label}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </ScrollArea>
       </aside>
     </>
   );
