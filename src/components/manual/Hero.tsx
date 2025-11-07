@@ -61,22 +61,6 @@ export const Hero = () => {
               Descargar PDF
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">6</div>
-              <div className="text-sm text-white/80">Secciones completas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-sm text-white/80">Interactivo</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-sm text-white/80">Acceso disponible</div>
-            </div>
-          </div>
         </div>
       </div>
 

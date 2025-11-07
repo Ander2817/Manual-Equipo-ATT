@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Search, Menu, X, Book } from 'lucide-react';
+import { Menu, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -10,7 +9,6 @@ interface NavbarProps {
 
 export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -37,11 +35,6 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(searchQuery);
-  };
-
   const navLinks = [
     { id: 'home', label: 'Inicio' },
     { id: 'intro', label: 'Introducción' },
@@ -66,18 +59,17 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="icon"
               onClick={onToggleSidebar}
-              className="lg:hidden"
-              aria-label="Toggle menu"
+              aria-label="Abrir menú de navegación"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             </Button>
             <Book className="h-6 w-6 text-primary" aria-hidden="true" />
-            <span className="font-bold text-lg text-foreground">Manual Técnico Interactivo</span>
+            <span className="font-bold text-lg text-foreground hidden sm:inline">Manual Técnico Interactivo</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -97,26 +89,6 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
               </a>
             ))}
           </div>
-
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="hidden md:flex items-center gap-2 max-w-xs">
-            <Input
-              type="search"
-              placeholder="Buscar en el manual..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full"
-              aria-label="Buscar en el manual"
-            />
-            <Button 
-              type="submit" 
-              size="icon" 
-              variant="default"
-              aria-label="Ejecutar búsqueda"
-            >
-              <Search className="h-4 w-4" />
-            </Button>
-          </form>
         </div>
       </div>
     </nav>
