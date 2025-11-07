@@ -8,18 +8,23 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import toolsAssembly1 from '@/assets/tools-screwdriver-new.jpg';
 import toolsAssembly2 from '@/assets/tools-antistatic-new.jpg';
 import toolsAssembly3 from '@/assets/tools-assembly-3.jpg';
+import toolsAssembly4 from '@/assets/tools-tweezers.jpg';
 import toolsDiagnostic1 from '@/assets/tools-software-new.jpg';
 import toolsDiagnostic2 from '@/assets/tools-hardware-tester-new.jpg';
 import toolsDiagnostic3 from '@/assets/tools-diagnostic-3.jpg';
+import toolsDiagnostic4 from '@/assets/tools-post-card.jpg';
 import toolsPreventive1 from '@/assets/tools-cleaning-new.jpg';
 import toolsPreventive2 from '@/assets/tools-multimeter-new.jpg';
 import toolsPreventive3 from '@/assets/tools-blower-new.jpg';
+import toolsPreventive4 from '@/assets/tools-compressed-air.jpg';
 import toolsCorrective1 from '@/assets/tools-desoldering-new.jpg';
 import toolsCorrective2 from '@/assets/tools-corrective-2.jpg';
 import toolsCorrective3 from '@/assets/tools-corrective-3.jpg';
+import toolsCorrective4 from '@/assets/tools-soldering-station.jpg';
 import toolsChemical1 from '@/assets/tools-alcohol-new.jpg';
 import toolsChemical2 from '@/assets/tools-solder-new.jpg';
 import toolsChemical3 from '@/assets/tools-thermal-paste-new.jpg';
+import toolsChemical4 from '@/assets/tools-contact-cleaner.jpg';
 
 const toolCategories = [
   {
@@ -43,6 +48,11 @@ const toolCategories = [
         name: 'Kit de Tornillos y Herramientas',
         description: 'Conjunto completo que incluye separador de tornillos para organización, imán para recuperar tornillos en lugares difíciles, pinzas para manipular componentes pequeños y alfombrilla antiestática.',
         image: toolsAssembly3
+      },
+      {
+        name: 'Pinzas de Precisión',
+        description: 'Herramientas antiestáticas de punta fina diseñadas para manipular componentes pequeños como jumpers, conectores diminutos y tornillos en espacios reducidos sin dañar los circuitos.',
+        image: toolsAssembly4
       }
     ]
   },
@@ -67,6 +77,11 @@ const toolCategories = [
         name: 'Antivirus Profesionales',
         description: 'Software de protección como Norton, Avira, Kaspersky, Avast y Malwarebytes que detectan y eliminan amenazas, ideal para diagnosticar problemas de rendimiento causados por malware.',
         image: toolsDiagnostic3
+      },
+      {
+        name: 'Tarjeta POST de Diagnóstico',
+        description: 'Dispositivo que se conecta a la ranura PCI/PCIe de la placa base y muestra códigos hexadecimales POST para identificar exactamente dónde falla el arranque del sistema.',
+        image: toolsDiagnostic4
       }
     ]
   },
@@ -91,6 +106,11 @@ const toolCategories = [
         name: 'Sopladora y Limpieza',
         description: 'Herramienta especializada para eliminar polvo de manera segura y eficiente de componentes internos como ventiladores, disipadores y ranuras de expansión sin dañarlos.',
         image: toolsPreventive3
+      },
+      {
+        name: 'Aire Comprimido en Spray',
+        description: 'Aerosol de aire comprimido diseñado específicamente para limpieza de equipos electrónicos, elimina polvo de lugares de difícil acceso sin contacto físico ni humedad.',
+        image: toolsPreventive4
       }
     ]
   },
@@ -115,6 +135,11 @@ const toolCategories = [
         name: 'Cautín',
         description: 'Herramienta fundamental para realizar reparaciones a nivel de componente electrónico mediante la aplicación precisa de soldadura, permitiendo reparar conexiones y componentes.',
         image: toolsCorrective3
+      },
+      {
+        name: 'Estación de Soldadura',
+        description: 'Equipo profesional con control digital de temperatura, soporte y punta intercambiable para soldaduras precisas en componentes electrónicos delicados de la placa base.',
+        image: toolsCorrective4
       }
     ]
   },
@@ -139,6 +164,11 @@ const toolCategories = [
         name: 'Pasta Térmica',
         description: 'Compuesto especializado que mejora la transferencia de calor entre el procesador (CPU) o tarjeta gráfica (GPU) y su disipador, evitando sobrecalentamiento.',
         image: toolsChemical3
+      },
+      {
+        name: 'Limpiador de Contactos',
+        description: 'Spray químico formulado para limpiar y restaurar conectores eléctricos oxidados o sucios, mejorando la conductividad en ranuras de memoria, conectores y puertos.',
+        image: toolsChemical4
       }
     ]
   }
