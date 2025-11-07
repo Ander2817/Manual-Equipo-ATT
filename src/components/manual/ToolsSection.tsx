@@ -228,7 +228,7 @@ export const ToolsSection = () => {
                           <img
                             src={tool.image}
                             alt={tool.name}
-                            className="relative w-full h-64 object-cover rounded-xl shadow-lg border-2 border-border/50"
+                            className="relative w-full h-64 object-contain rounded-xl shadow-lg border-2 border-border/50"
                           />
                         </div>
 
