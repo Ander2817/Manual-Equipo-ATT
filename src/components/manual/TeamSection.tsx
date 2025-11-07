@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Mail, Linkedin, Phone } from 'lucide-react';
 import teamMember1 from '@/assets/team-member-1.jpg';
 import teamMember2 from '@/assets/team-member-2.jpg';
-import teamMember3 from '@/assets/team-member-3.jpg';
+import teamMember3 from '@/assets/team-member-3.png';
 
 interface TeamMember {
   id: string;
