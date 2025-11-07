@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
     linkedin: 'linkedin.com/in/mariagonzalez',
     expertise: ['Internet de las Cosas', 'Análisis de datos', 'Software CMMS', 'Capacitación técnica'],
     achievements: [
-      'Certificación en Industria 4.0 y mantenimiento predictivo',
+      'Certificación en Industria 4.0 y sistemas de monitoreo',
       'Desarrollo de dashboard de monitoreo en tiempo real',
       'Capacitó a más de 100 técnicos en nuevas tecnologías',
     ],

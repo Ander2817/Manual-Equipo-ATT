@@ -3,6 +3,7 @@ import { Navbar } from '@/components/manual/Navbar';
 import { Sidebar } from '@/components/manual/Sidebar';
 import { Hero } from '@/components/manual/Hero';
 import { IntroSection } from '@/components/manual/IntroSection';
+import { SafetySection } from '@/components/manual/SafetySection';
 import { MaintenanceGuideSection } from '@/components/manual/MaintenanceGuideSection';
 import { ScopeSection } from '@/components/manual/ScopeSection';
 import { ToolsSection } from '@/components/manual/ToolsSection';
@@ -75,6 +76,7 @@ const Index = () => {
         <main className="flex-1 pt-16" role="main">
           <Hero />
           <IntroSection />
+          <SafetySection />
           <MaintenanceGuideSection />
           <ScopeSection />
           <ToolsSection />

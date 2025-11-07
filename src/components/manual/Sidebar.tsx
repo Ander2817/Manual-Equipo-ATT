@@ -1,4 +1,4 @@
-import { X, Home, Info, CheckSquare, Users, Cpu, UserCheck, Wrench } from 'lucide-react';
+import { X, Home, Info, CheckSquare, Users, Cpu, UserCheck, Wrench, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SidebarProps {
@@ -10,6 +10,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const menuItems = [
     { id: 'home', label: 'Inicio', icon: Home },
     { id: 'intro', label: '¿Qué es el mantenimiento?', icon: Info },
+    { id: 'safety', label: 'Normas de Seguridad', icon: ShieldCheck },
     { id: 'maintenance-guide', label: 'Guía para el Mantenimiento', icon: Wrench },
     { id: 'scope', label: 'El mantenimiento que haremos', icon: CheckSquare },
     { id: 'tools', label: 'Herramientas para Mantenimiento', icon: Wrench },
