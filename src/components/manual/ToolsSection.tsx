@@ -17,6 +17,8 @@ import toolsPreventive3 from '@/assets/tools-desoldering-new.jpg';
 import toolsCorrective1 from '@/assets/tools-alcohol-new.jpg';
 import toolsCorrective2 from '@/assets/tools-corrective-2.jpg';
 import toolsCorrective3 from '@/assets/tools-corrective-3.jpg';
+import toolsChemical1 from '@/assets/tools-alcohol-isopropilico.jpg';
+import toolsChemical2 from '@/assets/tools-estano-soldar.jpg';
 import toolsChemical3 from '@/assets/tools-thermal-paste-new.jpg';
 
 const toolCategories = [
@@ -123,6 +125,16 @@ const toolCategories = [
     color: 'from-indigo-500 to-purple-500',
     description: 'Productos químicos especializados que complementan el mantenimiento necesario para mantener el equipo en óptimas condiciones.',
     tools: [
+      {
+        name: 'Alcohol Isopropílico',
+        description: 'Sirve como un solvente de limpieza seguro y eficaz para componentes electrónicos, debido a que se evapora rápidamente sin dejar residuos.',
+        image: toolsChemical1
+      },
+      {
+        name: 'Estaño para Soldar',
+        description: 'Es fundamental en la reparación de PC, ya que sirve para crear conexiones eléctricas estables y uniones mecánicas seguras entre los componentes electrónicos y la placa base.',
+        image: toolsChemical2
+      },
       {
         name: 'Pasta Térmica',
         description: 'Compuesto especializado que mejora la transferencia de calor entre el procesador (CPU) o tarjeta gráfica (GPU) y su disipador, evitando sobrecalentamiento.',
