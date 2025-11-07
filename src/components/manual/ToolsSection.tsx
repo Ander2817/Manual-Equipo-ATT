@@ -19,6 +19,7 @@ import toolsCorrective2 from '@/assets/tools-corrective-2.jpg';
 import toolsCorrective3 from '@/assets/tools-corrective-3.jpg';
 import toolsChemical1 from '@/assets/tools-solder-new.jpg';
 import toolsChemical2 from '@/assets/tools-thermal-paste-new.jpg';
+import toolsChemical3 from '@/assets/tools-thermal-paste-new.jpg';
 
 const toolCategories = [
   {
@@ -136,7 +137,8 @@ const toolCategories = [
       },
       {
         name: 'Pasta Térmica',
-        description: 'Compuesto especializado que mejora la transferencia de calor entre el procesador (CPU) o tarjeta gráfica (GPU) y su disipador, evitando sobrecalentamiento.'
+        description: 'Compuesto especializado que mejora la transferencia de calor entre el procesador (CPU) o tarjeta gráfica (GPU) y su disipador, evitando sobrecalentamiento.',
+        image: toolsChemical3
       }
     ]
   }
