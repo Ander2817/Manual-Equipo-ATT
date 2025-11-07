@@ -5,21 +5,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 // Importar imágenes
-import toolsAssembly1 from '@/assets/tools-assembly-1.jpg';
-import toolsAssembly2 from '@/assets/tools-assembly-2.jpg';
+import toolsAssembly1 from '@/assets/tools-screwdriver-new.jpg';
+import toolsAssembly2 from '@/assets/tools-antistatic-new.jpg';
 import toolsAssembly3 from '@/assets/tools-assembly-3.jpg';
-import toolsDiagnostic1 from '@/assets/tools-diagnostic-1.jpg';
-import toolsDiagnostic2 from '@/assets/tools-diagnostic-2.jpg';
+import toolsDiagnostic1 from '@/assets/tools-software-new.jpg';
+import toolsDiagnostic2 from '@/assets/tools-hardware-tester-new.jpg';
 import toolsDiagnostic3 from '@/assets/tools-diagnostic-3.jpg';
-import toolsPreventive1 from '@/assets/tools-preventive-1.jpg';
-import toolsPreventive2 from '@/assets/tools-preventive-2.jpg';
-import toolsPreventive3 from '@/assets/tools-preventive-3.jpg';
-import toolsCorrective1 from '@/assets/tools-corrective-1.jpg';
+import toolsPreventive1 from '@/assets/tools-cleaning-new.jpg';
+import toolsPreventive2 from '@/assets/tools-multimeter-new.jpg';
+import toolsPreventive3 from '@/assets/tools-blower-new.jpg';
+import toolsCorrective1 from '@/assets/tools-desoldering-new.jpg';
 import toolsCorrective2 from '@/assets/tools-corrective-2.jpg';
 import toolsCorrective3 from '@/assets/tools-corrective-3.jpg';
-import toolsChemical1 from '@/assets/tools-chemical-1.png';
-import toolsChemical2 from '@/assets/tools-chemical-2.jpg';
-import toolsChemical3 from '@/assets/tools-chemical-3.jpg';
+import toolsChemical1 from '@/assets/tools-alcohol-new.jpg';
+import toolsChemical2 from '@/assets/tools-solder-new.jpg';
+import toolsChemical3 from '@/assets/tools-thermal-paste-new.jpg';
 
 const toolCategories = [
   {
