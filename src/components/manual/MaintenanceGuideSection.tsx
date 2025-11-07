@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { Shield, Wrench, CheckCircle2, AlertTriangle } from 'lucide-react';
-import maintenanceExternal from '@/assets/maintenance-external.jpg';
-import maintenanceInternal1 from '@/assets/maintenance-internal-1.jpg';
-import maintenanceInternal2 from '@/assets/maintenance-internal-2.jpg';
+import maintenanceVisualInspection from '@/assets/maintenance-corrective-1.jpg';
+import maintenanceExternal from '@/assets/maintenance-corrective-2.jpg';
+import maintenanceInternal from '@/assets/maintenance-corrective-3.jpg';
 import maintenanceComponents from '@/assets/maintenance-components.png';
 import maintenanceOptimization from '@/assets/maintenance-optimization.jpg';
 import maintenanceTesting from '@/assets/maintenance-testing.jpg';
@@ -22,7 +22,7 @@ export const MaintenanceGuideSection = () => {
       number: 1,
       title: 'Inspección Visual del Equipo',
       description: 'Revisar el estado físico del gabinete, conexiones, cables y puertos USB. Confirmar que no falten tornillos o tapas.',
-      image: null
+      image: maintenanceVisualInspection
     },
     {
       number: 2,
@@ -34,8 +34,7 @@ export const MaintenanceGuideSection = () => {
       number: 3,
       title: 'Limpieza Interna',
       description: 'Se debe realizar con aire comprimido, brochas, equipo apagado y desconectado. Quitar polvo del ventilador, fuente de poder y disipador. Verificar correcto flujo de aire.',
-      image: maintenanceInternal1,
-      secondaryImage: maintenanceInternal2
+      image: maintenanceInternal
     },
     {
       number: 4,
@@ -203,21 +202,13 @@ export const MaintenanceGuideSection = () => {
                         </div>
                       )}
                     </div>
-                    {(step.image || step.secondaryImage) && (
+                    {(step.image) && (
                       <div className="relative bg-secondary">
                         {step.image && (
                           <img
                             src={step.image}
                             alt={`Ilustración de ${step.title}`}
                             className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        )}
-                        {step.secondaryImage && (
-                          <img
-                            src={step.secondaryImage}
-                            alt={`Ilustración adicional de ${step.title}`}
-                            className="absolute bottom-4 right-4 w-32 h-32 object-cover rounded-lg border-2 border-background shadow-lg"
                             loading="lazy"
                           />
                         )}
