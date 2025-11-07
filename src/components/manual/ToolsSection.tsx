@@ -17,7 +17,7 @@ import toolsPreventive3 from '@/assets/tools-desoldering-new.jpg';
 import toolsCorrective1 from '@/assets/tools-alcohol-new.jpg';
 import toolsCorrective2 from '@/assets/tools-corrective-2.jpg';
 import toolsCorrective3 from '@/assets/tools-corrective-3.jpg';
-import toolsChemical1 from '@/assets/tools-solder-new.jpg';
+import toolsChemical1 from '@/assets/tools-solder-updated.jpg';
 import toolsChemical2 from '@/assets/tools-thermal-paste-new.jpg';
 import toolsChemical3 from '@/assets/tools-thermal-paste-new.jpg';
 
