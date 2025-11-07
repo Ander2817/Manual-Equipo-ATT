@@ -23,11 +23,11 @@ const Index = () => {
       {/* Navbar - Fixed at top */}
       <Navbar onSearch={() => {}} onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
-      {/* Mobile Sidebar */}
+      {/* Off-canvas Sidebar */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Main Content - Centered */}
-      <main className="w-full pt-16" role="main">
+      <main className="w-full" role="main">
         <Hero />
         <IntroSection />
         <SafetySection />

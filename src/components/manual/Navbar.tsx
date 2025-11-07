@@ -50,7 +50,7 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all ${
         scrolled ? 'bg-card shadow-lg' : 'bg-card/95 backdrop-blur-sm'
       }`}
       role="navigation"
