@@ -18,6 +18,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { id: 'community', label: 'Información a la comunidad', icon: Users },
     { id: 'components', label: 'Componentes', icon: Cpu },
     { id: 'funciones-componentes', label: 'Funciones de los componentes', icon: Cpu },
+    { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare },
     { id: 'glossary', label: 'Glosario de Términos', icon: BookOpen },
     { id: 'team', label: 'Equipo desarrollador', icon: UserCheck },
   ];

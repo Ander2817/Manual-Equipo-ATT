@@ -6,11 +6,12 @@ import { IntroSection } from '@/components/manual/IntroSection';
 import { SafetySection } from '@/components/manual/SafetySection';
 import { MaintenanceGuideSection } from '@/components/manual/MaintenanceGuideSection';
 import { ToolsSection } from '@/components/manual/ToolsSection';
-import { GlossarySection } from '@/components/manual/GlossarySection';
 import { CommunityInfoSection } from '@/components/manual/CommunityInfoSection';
 import { CommunitySection } from '@/components/manual/CommunitySection';
 import { ComponentsSection } from '@/components/manual/ComponentsSection';
 import ComponentFunctionsSection from '@/components/manual/ComponentFunctionsSection';
+import { CommonIssuesSection } from '@/components/manual/CommonIssuesSection';
+import { GlossarySection } from '@/components/manual/GlossarySection';
 import { TeamSection } from '@/components/manual/TeamSection';
 import { Footer } from '@/components/manual/Footer';
 import { toast } from 'sonner';
@@ -37,6 +38,7 @@ const Index = () => {
         <CommunitySection />
         <ComponentsSection />
         <ComponentFunctionsSection />
+        <CommonIssuesSection />
         <GlossarySection />
         <TeamSection />
         <Footer />

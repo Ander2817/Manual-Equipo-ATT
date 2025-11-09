@@ -8,56 +8,84 @@ interface GlossaryTerm {
 
 const glossaryTerms: GlossaryTerm[] = [
   {
-    term: 'Hardware',
-    definition: 'Componentes físicos de una computadora, como el monitor, teclado, procesador o cables.',
-  },
-  {
-    term: 'Software',
-    definition: 'Programas y sistemas que permiten que la computadora funcione, como el sistema operativo o aplicaciones.',
-  },
-  {
-    term: 'Componente',
-    definition: 'Parte individual del hardware del computador (ej: RAM, disco duro, fuente de poder).',
-  },
-  {
-    term: 'Periférico',
-    definition: 'Dispositivo externo que se conecta a la computadora (mouse, teclado, impresora, monitor).',
-  },
-  {
-    term: 'Diagnóstico',
-    definition: 'Proceso de identificar fallas o irregularidades en el funcionamiento del computador.',
-  },
-  {
-    term: 'Descarga Electrostática (ESD)',
-    definition: 'Corriente eléctrica inesperada que se transfiere al tocar componentes, capaz de dañarlos.',
-  },
-  {
-    term: 'GPU (Tarjeta Gráfica)',
-    definition: 'Componente responsable de mostrar video e imágenes.',
-  },
-  {
-    term: 'SATA',
-    definition: 'Tipo de cable usado para conectar dispositivos como discos duros y unidades lectoras.',
+    term: 'Adware',
+    definition: 'Software publicitario no deseado que muestra anuncios emergentes o redirecciona el navegador, puede ralentizar el sistema.',
   },
   {
     term: 'Antivirus / Antimalware',
     definition: 'Programa que detecta, elimina y previene software dañino en una computadora.',
   },
   {
-    term: 'Drivers / Controladores',
-    definition: 'Programas que permiten que los componentes de hardware funcionen correctamente con el sistema operativo.',
+    term: 'BIOS',
+    definition: 'Sistema básico de entrada/salida que controla el hardware del equipo antes de cargar el sistema operativo.',
   },
   {
-    term: 'Malware',
-    definition: 'Es un tipo de software malicioso diseñado para dañar, infiltrarse o alterar el funcionamiento de una computadora, dispositivo o red sin el permiso del usuario.',
+    term: 'Componente',
+    definition: 'Parte individual del hardware del computador (ej: RAM, disco duro, fuente de poder).',
   },
   {
     term: 'Cortocircuito',
     definition: 'Contacto no deseado entre dos puntos eléctricos que provoca daño o riesgo.',
   },
   {
+    term: 'Descarga Electrostática (ESD)',
+    definition: 'Corriente eléctrica inesperada que se transfiere al tocar componentes, capaz de dañarlos.',
+  },
+  {
+    term: 'Diagnóstico',
+    definition: 'Proceso de identificar fallas o irregularidades en el funcionamiento del computador.',
+  },
+  {
+    term: 'Drivers / Controladores',
+    definition: 'Programas que permiten que los componentes de hardware funcionen correctamente con el sistema operativo.',
+  },
+  {
+    term: 'GPU (Tarjeta Gráfica)',
+    definition: 'Componente responsable de mostrar video e imágenes.',
+  },
+  {
+    term: 'Hardware',
+    definition: 'Componentes físicos de una computadora, como el monitor, teclado, procesador o cables.',
+  },
+  {
+    term: 'HDMI',
+    definition: 'Puerto de alta definición multimedia para transmitir video y audio digital de alta calidad.',
+  },
+  {
+    term: 'Malware',
+    definition: 'Es un tipo de software malicioso diseñado para dañar, infiltrarse o alterar el funcionamiento de una computadora, dispositivo o red sin el permiso del usuario.',
+  },
+  {
+    term: 'Periférico',
+    definition: 'Dispositivo externo que se conecta a la computadora (mouse, teclado, impresora, monitor).',
+  },
+  {
     term: 'Protección Personal (EPP)',
     definition: 'Elementos de seguridad usados por técnicos como guantes, lentes o mascarillas.',
+  },
+  {
+    term: 'Puertos USB',
+    definition: 'Conectores universales que permiten conectar dispositivos externos como mouse, teclado, impresoras o memorias USB.',
+  },
+  {
+    term: 'Punto de Sistema',
+    definition: 'Copia de seguridad del estado del sistema operativo que permite restaurar Windows a un momento anterior sin perder archivos personales.',
+  },
+  {
+    term: 'SATA',
+    definition: 'Tipo de cable usado para conectar dispositivos como discos duros y unidades lectoras.',
+  },
+  {
+    term: 'SO (Sistema Operativo)',
+    definition: 'Software principal que gestiona el hardware y permite ejecutar programas (Windows, Linux, macOS).',
+  },
+  {
+    term: 'Software',
+    definition: 'Programas y sistemas que permiten que la computadora funcione, como el sistema operativo o aplicaciones.',
+  },
+  {
+    term: 'VGA',
+    definition: 'Puerto analógico tradicional para conectar monitores, usa cable con 15 pines y tornillos de fijación.',
   },
 ];
 
