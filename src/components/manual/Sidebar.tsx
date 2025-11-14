@@ -1,4 +1,4 @@
-import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap } from 'lucide-react';
+import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -16,6 +16,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare },
     { id: 'glossary', label: 'Glosario de términos', icon: FileText },
     { id: 'team', label: 'Equipo', icon: GraduationCap },
+    { id: 'credits', label: 'Créditos y agradecimientos', icon: Award },
   ];
 
   const handleNavigation = (id: string) => {
