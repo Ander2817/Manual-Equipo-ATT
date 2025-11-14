@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, Book } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoUpta from '@/assets/logo-upta.png';
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -63,6 +64,11 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
             >
               <Menu className="h-6 w-6" />
             </Button>
+            <img 
+              src={logoUpta} 
+              alt="Logo UPTA Federico Brito Figueroa" 
+              className="h-12 w-auto object-contain"
+            />
             <Book className="h-6 w-6 text-primary" aria-hidden="true" />
             <span className="font-bold text-lg text-foreground hidden sm:inline">Manual Técnico Interactivo</span>
           </div>
