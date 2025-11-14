@@ -30,11 +30,11 @@ const Index = () => {
       {/* Main Content - Centered */}
       <main className="w-full" role="main">
         <Hero />
+        <CommunityInfoSection />
         <IntroSection />
         <SafetySection />
         <MaintenanceGuideSection />
         <ToolsSection />
-        <CommunityInfoSection />
         <CommunitySection />
         <ComponentsSection />
         <ComponentFunctionsSection />
