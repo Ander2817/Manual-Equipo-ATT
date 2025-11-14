@@ -1,4 +1,4 @@
-import { X, Home, Info, CheckSquare, Users, Cpu, UserCheck, Wrench, ShieldCheck, BookOpen } from 'lucide-react';
+import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -10,17 +10,12 @@ interface SidebarProps {
 export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const menuItems = [
     { id: 'home', label: 'Inicio', icon: Home },
-    { id: 'intro', label: '¿Qué es el mantenimiento?', icon: Info },
-    { id: 'safety', label: 'Normas de Seguridad', icon: ShieldCheck },
-    { id: 'maintenance-guide', label: 'Guía para el Mantenimiento', icon: Wrench },
-    { id: 'tools', label: 'Herramientas para Mantenimiento', icon: Wrench },
-    { id: 'community-info', label: 'Información de la comunidad', icon: Info },
-    { id: 'community', label: 'Información a la comunidad', icon: Users },
+    { id: 'community-info', label: 'Información de la comunidad', icon: Users },
+    { id: 'intro', label: 'Introducción', icon: BookOpen },
     { id: 'components', label: 'Componentes', icon: Cpu },
-    { id: 'funciones-componentes', label: 'Funciones de los componentes', icon: Cpu },
     { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare },
-    { id: 'glossary', label: 'Glosario de Términos', icon: BookOpen },
-    { id: 'team', label: 'Equipo desarrollador', icon: UserCheck },
+    { id: 'glossary', label: 'Glosario de términos', icon: FileText },
+    { id: 'team', label: 'Equipo', icon: GraduationCap },
   ];
 
   const handleNavigation = (id: string) => {

@@ -17,7 +17,7 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
       setScrolled(window.scrollY > 50);
       
       // Scrollspy - detect active section
-      const sections = ['home', 'intro', 'community-info', 'components', 'glossary', 'team'];
+      const sections = ['home', 'community-info', 'intro', 'components', 'glossary', 'team'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -37,8 +37,8 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
   }, []);
 
   const navLinks = [
-    { id: 'intro', label: 'Introducción' },
     { id: 'community-info', label: 'Info de la comunidad' },
+    { id: 'intro', label: 'Introducción' },
     { id: 'components', label: 'Componentes' },
     { id: 'glossary', label: 'Glosario de términos' },
     { id: 'team', label: 'Equipo' },
