@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Menu, Book } from 'lucide-react';
+import { Menu, Book, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logoUpta from '@/assets/logo-upta.png';
 
 interface NavbarProps {
   onSearch: (query: string) => void;
   onToggleSidebar: () => void;
+  isDarkMode: boolean;
+  onToggleDarkMode: () => void;
 }
 
-export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
+export const Navbar = ({ onSearch, onToggleSidebar, isDarkMode, onToggleDarkMode }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -90,6 +92,37 @@ export const Navbar = ({ onSearch, onToggleSidebar }: NavbarProps) => {
                 {link.label}
               </a>
             ))}
+            
+            {/* Dark Mode Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onToggleDarkMode}
+              className="ml-2"
+              aria-label={isDarkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
+            >
+              {isDarkMode ? (
+                <Sun className="h-5 w-5 text-yellow-500" />
+              ) : (
+                <Moon className="h-5 w-5 text-primary" />
+              )}
+            </Button>
+          </div>
+
+          {/* Mobile Dark Mode Toggle */}
+          <div className="lg:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onToggleDarkMode}
+              aria-label={isDarkMode ? 'Activar modo claro' : 'Activar modo oscuro'}
+            >
+              {isDarkMode ? (
+                <Sun className="h-5 w-5 text-yellow-500" />
+              ) : (
+                <Moon className="h-5 w-5 text-primary" />
+              )}
+            </Button>
           </div>
         </div>
       </div>
