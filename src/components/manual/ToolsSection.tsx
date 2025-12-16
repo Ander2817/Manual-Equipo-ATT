@@ -27,6 +27,7 @@ const toolCategories = [
     title: 'Ensamblaje',
     icon: Wrench,
     color: 'from-blue-500 to-cyan-500',
+    iconColor: 'text-blue-500',
     description: 'Herramientas utilizadas para ensamblar y desensamblar todas las partes del equipo de cómputo.',
     tools: [
       {
@@ -51,6 +52,7 @@ const toolCategories = [
     title: 'Diagnóstico',
     icon: Search,
     color: 'from-purple-500 to-pink-500',
+    iconColor: 'text-purple-500',
     description: 'Herramientas que permiten identificar el origen de fallas o problemas en computadoras, tanto a nivel de hardware como software.',
     tools: [
       {
@@ -75,6 +77,7 @@ const toolCategories = [
     title: 'Preventivo',
     icon: Shield,
     color: 'from-green-500 to-emerald-500',
+    iconColor: 'text-green-500',
     description: 'Herramientas utilizadas para prevenir el surgimiento de averías mediante mantenimiento regular y cuidado preventivo.',
     tools: [
       {
@@ -99,6 +102,7 @@ const toolCategories = [
     title: 'Correctivo',
     icon: Hammer,
     color: 'from-orange-500 to-red-500',
+    iconColor: 'text-orange-500',
     description: 'Herramientas especializadas con capacidad de reparar componentes del equipo que presenten fallas o defectos.',
     tools: [
       {
@@ -123,6 +127,7 @@ const toolCategories = [
     title: 'Productos Químicos',
     icon: Droplets,
     color: 'from-indigo-500 to-purple-500',
+    iconColor: 'text-indigo-500',
     description: 'Productos químicos especializados que complementan el mantenimiento necesario para mantener el equipo en óptimas condiciones.',
     tools: [
       {
@@ -171,12 +176,9 @@ export const ToolsSection = () => {
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:text-white data-[state=active]:shadow-lg flex flex-col items-center gap-2 py-4 px-2"
-                  style={{
-                    backgroundImage: selectedCategory === category.id ? `linear-gradient(135deg, var(--${category.color}))` : 'none'
-                  }}
+                  className={`data-[state=active]:bg-gradient-to-r data-[state=active]:text-white data-[state=active]:shadow-lg flex flex-col items-center gap-2 py-4 px-2 ${category.color.replace('from-', 'data-[state=active]:from-').replace(' to-', ' data-[state=active]:to-')}`}
                 >
-                  <Icon className="h-6 w-6" />
+                  <Icon className={`h-6 w-6 ${selectedCategory === category.id ? 'text-white' : category.iconColor}`} />
                   <span className="text-sm font-medium">{category.title}</span>
                 </TabsTrigger>
               );

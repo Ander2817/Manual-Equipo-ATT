@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/manual/Navbar';
 import { Sidebar } from '@/components/manual/Sidebar';
 import { Hero } from '@/components/manual/Hero';
@@ -15,15 +15,36 @@ import { GlossarySection } from '@/components/manual/GlossarySection';
 import { TeamSection } from '@/components/manual/TeamSection';
 import { CreditsSection } from '@/components/manual/CreditsSection';
 import { Footer } from '@/components/manual/Footer';
+import { BootScreen } from '@/components/BootScreen';
 import { toast } from 'sonner';
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [booted, setBooted] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Apply dark mode class to document
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  if (!booted) {
+    return <BootScreen onComplete={() => setBooted(true)} />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
       {/* Navbar - Fixed at top */}
-      <Navbar onSearch={() => {}} onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      <Navbar 
+        onSearch={() => {}} 
+        onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
+      />
 
       {/* Off-canvas Sidebar */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
