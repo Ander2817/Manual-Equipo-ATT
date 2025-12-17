@@ -184,16 +184,176 @@ All colors MUST be HSL.
   ::selection {
     @apply bg-primary text-primary-foreground;
   }
+
+  /* CRT effect for boot screen */
+  .crt-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.3) 2px,
+      rgba(0, 0, 0, 0.3) 4px
+    );
+    animation: scanlines 0.1s linear infinite;
+  }
+
+  /* Neon glow effect */
+  .neon-glow {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 40px currentColor;
+  }
+
+  /* Shimmer effect for loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Card hover 3D effect */
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+  }
+
+  /* Pulse border */
+  .pulse-border {
+    animation: pulse-border 2s ease-in-out infinite;
+  }
+
+  /* Staggered animation helper */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Smooth underline animation */
+  .underline-animate {
+    position: relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+
+  /* Blur on scroll */
+  .blur-scroll {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: 
+      linear-gradient(hsl(var(--background)), hsl(var(--background))),
+      linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  /* Floating animation variants */
+  .float-1 { animation: float 6s ease-in-out infinite; }
+  .float-2 { animation: float 8s ease-in-out infinite 1s; }
+  .float-3 { animation: float 7s ease-in-out infinite 2s; }
+
+  /* Text shadow glow */
+  .text-glow-sm { text-shadow: 0 0 10px currentColor; }
+  .text-glow-md { text-shadow: 0 0 20px currentColor; }
+  .text-glow-lg { text-shadow: 0 0 30px currentColor, 0 0 60px currentColor; }
+
+  /* Interactive scale */
+  .interactive {
+    @apply transition-all duration-200 cursor-pointer;
+  }
+
+  .interactive:hover {
+    @apply scale-[1.02];
+  }
+
+  .interactive:active {
+    @apply scale-[0.98];
+  }
 }
 
 @keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: hsl(var(--primary) / 0.3); }
+  50% { border-color: hsl(var(--primary)); }
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  
+  body {
+    background: white !important;
+    color: black !important;
   }
-  50% {
-    background-position: 100% 50%;
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
-  100% {
-    background-position: 0% 50%;
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
   }
 }
