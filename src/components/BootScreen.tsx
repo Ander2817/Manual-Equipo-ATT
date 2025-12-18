@@ -221,8 +221,8 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <span className="text-green-400 animate-pulse">›</span>
-              <span className={text.includes('[OK]') ? 'text-green-400' : 'text-green-500/80'}>
-                {text}
+              <span className={text?.includes('[OK]') ? 'text-green-400' : 'text-green-500/80'}>
+                {text || ''}
               </span>
               {index === bootText.length - 1 && <span className="animate-pulse ml-1">█</span>}
             </div>
