@@ -1,4 +1,4 @@
-import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award } from 'lucide-react';
+import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award, Sparkles, Wrench, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -9,14 +9,17 @@ interface SidebarProps {
 
 export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const menuItems = [
-    { id: 'home', label: 'Inicio', icon: Home },
-    { id: 'community-info', label: 'Información de la comunidad', icon: Users },
-    { id: 'intro', label: 'Introducción', icon: BookOpen },
-    { id: 'components', label: 'Componentes', icon: Cpu },
-    { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare },
-    { id: 'glossary', label: 'Glosario de términos', icon: FileText },
-    { id: 'team', label: 'Equipo', icon: GraduationCap },
-    { id: 'credits', label: 'Créditos y agradecimientos', icon: Award },
+    { id: 'home', label: 'Inicio', icon: Home, color: 'from-blue-500 to-cyan-500' },
+    { id: 'community-info', label: 'Información de la comunidad', icon: Users, color: 'from-purple-500 to-pink-500' },
+    { id: 'intro', label: 'Introducción', icon: BookOpen, color: 'from-green-500 to-emerald-500' },
+    { id: 'safety', label: 'Seguridad', icon: Shield, color: 'from-red-500 to-orange-500' },
+    { id: 'maintenance', label: 'Guía de Mantenimiento', icon: Wrench, color: 'from-amber-500 to-yellow-500' },
+    { id: 'tools', label: 'Herramientas', icon: Wrench, color: 'from-indigo-500 to-purple-500' },
+    { id: 'components', label: 'Componentes', icon: Cpu, color: 'from-cyan-500 to-blue-500' },
+    { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare, color: 'from-rose-500 to-red-500' },
+    { id: 'glossary', label: 'Glosario de términos', icon: FileText, color: 'from-teal-500 to-green-500' },
+    { id: 'team', label: 'Equipo', icon: GraduationCap, color: 'from-violet-500 to-purple-500' },
+    { id: 'credits', label: 'Créditos y agradecimientos', icon: Award, color: 'from-yellow-500 to-orange-500' },
   ];
 
   const handleNavigation = (id: string) => {
@@ -29,10 +32,10 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
   return (
     <>
-      {/* Overlay */}
+      {/* Overlay with blur */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40"
+          className="fixed inset-0 bg-foreground/20 backdrop-blur-sm z-40 transition-all duration-300"
           onClick={onClose}
           aria-hidden="true"
         />
@@ -40,38 +43,65 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-card shadow-xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-72 bg-card/95 backdrop-blur-xl shadow-2xl shadow-foreground/10 z-50 transform transition-all duration-500 ease-out border-r border-border/50 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="complementary"
         aria-label="Navegación lateral"
       >
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="font-bold text-lg text-foreground">Secciones</h2>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onClose}
-            aria-label="Cerrar menú lateral"
-          >
-            <X className="h-5 w-5" />
-          </Button>
+        {/* Header with gradient */}
+        <div className="relative p-5 border-b border-border/50 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          
+          <div className="relative flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-gradient-to-br from-primary to-primary/80 rounded-xl shadow-lg shadow-primary/25">
+                <Sparkles className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div>
+                <h2 className="font-bold text-lg text-foreground">Secciones</h2>
+                <p className="text-xs text-muted-foreground">Navega por el manual</p>
+              </div>
+            </div>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onClose}
+              aria-label="Cerrar menú lateral"
+              className="hover:bg-destructive/10 hover:text-destructive hover:rotate-90 transition-all duration-300"
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
 
-        <ScrollArea className="h-[calc(100vh-80px)]">
+        <ScrollArea className="h-[calc(100vh-100px)]">
           <nav className="p-4" aria-label="Navegación por secciones">
-            <ul className="space-y-2">
-              {menuItems.map((item) => {
+            <ul className="space-y-1.5">
+              {menuItems.map((item, index) => {
                 const Icon = item.icon;
                 return (
-                  <li key={item.id}>
+                  <li key={item.id} style={{ animationDelay: `${index * 50}ms` }} className="animate-fade-in-left opacity-0" >
                     <button
                       onClick={() => handleNavigation(item.id)}
-                      className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors hover:bg-secondary group"
+                      className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 hover:bg-secondary/80 group relative overflow-hidden hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      <Icon className="h-5 w-5 text-primary group-hover:text-primary" aria-hidden="true" />
-                      <span className="text-sm text-foreground group-hover:text-foreground">
+                      {/* Hover gradient background */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                      
+                      {/* Icon container with gradient */}
+                      <div className={`relative p-2 rounded-lg bg-gradient-to-br ${item.color} shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-110`}>
+                        <Icon className="h-4 w-4 text-white" aria-hidden="true" />
+                      </div>
+                      
+                      <span className="relative text-sm font-medium text-foreground group-hover:text-foreground transition-colors">
                         {item.label}
+                      </span>
+                      
+                      {/* Arrow indicator */}
+                      <span className="relative ml-auto opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-muted-foreground">
+                        →
                       </span>
                     </button>
                   </li>
@@ -79,6 +109,15 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
               })}
             </ul>
           </nav>
+          
+          {/* Footer info */}
+          <div className="p-4 mt-4 mx-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-border/50">
+            <p className="text-xs text-muted-foreground text-center leading-relaxed">
+              <span className="font-semibold text-foreground">Manual Técnico v2025</span>
+              <br />
+              UPTA "Federico Brito Figueroa"
+            </p>
+          </div>
         </ScrollArea>
       </aside>
     </>
