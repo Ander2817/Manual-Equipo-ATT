@@ -8,47 +8,46 @@ interface BootScreenProps {
 }
 
 const playBootSound = () => {
-  const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-  
-  const playBeep = (frequency: number, startTime: number, duration: number, volume: number = 0.3) => {
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.frequency.value = frequency;
-    oscillator.type = 'sine';
-    
-    gainNode.gain.setValueAtTime(0, startTime);
-    gainNode.gain.linearRampToValueAtTime(volume, startTime + 0.01);
-    gainNode.gain.linearRampToValueAtTime(0, startTime + duration);
-    
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration);
-  };
-
-  // Classic POST beep
-  playBeep(800, audioContext.currentTime, 0.15, 0.2);
-  
-  // Success chord sequence
-  playBeep(523.25, audioContext.currentTime + 0.3, 0.15, 0.15);
-  playBeep(659.25, audioContext.currentTime + 0.45, 0.15, 0.15);
-  playBeep(783.99, audioContext.currentTime + 0.6, 0.2, 0.15);
+  try {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const playBeep = (frequency: number, startTime: number, duration: number, volume: number = 0.3) => {
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      oscillator.frequency.value = frequency;
+      oscillator.type = 'sine';
+      gainNode.gain.setValueAtTime(0, startTime);
+      gainNode.gain.linearRampToValueAtTime(volume, startTime + 0.01);
+      gainNode.gain.linearRampToValueAtTime(0, startTime + duration);
+      oscillator.start(startTime);
+      oscillator.stop(startTime + duration);
+    };
+    playBeep(800, audioContext.currentTime, 0.15, 0.2);
+    playBeep(523.25, audioContext.currentTime + 0.3, 0.15, 0.15);
+    playBeep(659.25, audioContext.currentTime + 0.45, 0.15, 0.15);
+    playBeep(783.99, audioContext.currentTime + 0.6, 0.2, 0.15);
+  } catch (e) {
+    // Audio not supported, continue silently
+  }
 };
 
 const playTypingSound = () => {
-  const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.connect(gain);
-  gain.connect(ctx.destination);
-  osc.frequency.value = 400 + Math.random() * 200;
-  osc.type = 'square';
-  gain.gain.setValueAtTime(0.02, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.03);
-  osc.start(ctx.currentTime);
-  osc.stop(ctx.currentTime + 0.03);
+  try {
+    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = 400 + Math.random() * 200;
+    osc.type = 'square';
+    gain.gain.setValueAtTime(0.02, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.03);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.03);
+  } catch (e) {
+    // Audio not supported
+  }
 };
 
 export const BootScreen = ({ onComplete }: BootScreenProps) => {
@@ -60,6 +59,13 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
   const [showMatrix, setShowMatrix] = useState(false);
   const [systemStats, setSystemStats] = useState({ cpu: 0, ram: 0, disk: 0 });
 
+  // Safety timeout: skip boot screen after 15 seconds no matter what
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onComplete();
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [onComplete]);
   const bootMessages = [
     'UPTA-BIOS v3.0.25 - Inicializando...',
     'Verificando hardware del sistema...',
@@ -131,6 +137,13 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
 
   return (
     <div className={`fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden ${glitchEffect ? 'animate-glitch' : ''}`}>
+      {/* Skip button */}
+      <button
+        onClick={onComplete}
+        className="absolute top-4 right-4 z-[110] text-gray-500 hover:text-white text-xs font-mono px-3 py-1 border border-gray-700 hover:border-gray-500 rounded transition-colors"
+      >
+        Saltar ›
+      </button>
       {/* Matrix rain effect */}
       {showMatrix && <MatrixRain />}
 
