@@ -137,9 +137,13 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
 
   return (
     <div className={`fixed inset-0 z-[100] bg-black flex items-center justify-center overflow-hidden ${glitchEffect ? 'animate-glitch' : ''}`}>
-      {/* Matrix rain effect */}
-      {showMatrix && <MatrixRain />}
-
+      {/* Skip button */}
+      <button
+        onClick={onComplete}
+        className="absolute top-4 right-4 z-[110] text-gray-500 hover:text-white text-xs font-mono px-3 py-1 border border-gray-700 hover:border-gray-500 rounded transition-colors"
+      >
+        Saltar ›
+      </button>
       {/* CRT screen effect - enhanced */}
       <div className="absolute inset-0 pointer-events-none crt-effect">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent animate-pulse" />
