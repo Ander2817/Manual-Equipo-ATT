@@ -59,6 +59,13 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
   const [showMatrix, setShowMatrix] = useState(false);
   const [systemStats, setSystemStats] = useState({ cpu: 0, ram: 0, disk: 0 });
 
+  // Safety timeout: skip boot screen after 15 seconds no matter what
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onComplete();
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [onComplete]);
   const bootMessages = [
     'UPTA-BIOS v3.0.25 - Inicializando...',
     'Verificando hardware del sistema...',
