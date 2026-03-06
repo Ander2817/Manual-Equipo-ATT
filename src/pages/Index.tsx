@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from '@/components/manual/Navbar';
 import { Sidebar } from '@/components/manual/Sidebar';
 import { Hero } from '@/components/manual/Hero';
@@ -15,31 +15,18 @@ import { GlossarySection } from '@/components/manual/GlossarySection';
 import { TeamSection } from '@/components/manual/TeamSection';
 import { CreditsSection } from '@/components/manual/CreditsSection';
 import { Footer } from '@/components/manual/Footer';
-import { BootScreen } from '@/components/BootScreen';
-import { SkipLink } from '@/components/ui/skip-link';
-import { ReadingProgress } from '@/components/ui/reading-progress';
-import { CursorGlow } from '@/components/effects/CursorGlow';
-import { Confetti } from '@/components/effects/Confetti';
-import { useKonamiCode } from '@/hooks/useKonamiCode';
-import { toast } from '@/hooks/use-toast';
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [booted, setBooted] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Apply dark mode class to document
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
-
-  if (!booted) {
-    return <BootScreen onComplete={() => setBooted(true)} />;
-  }
 
   return (
     <div className="min-h-screen bg-background">
