@@ -144,6 +144,9 @@ export const BootScreen = ({ onComplete }: BootScreenProps) => {
       >
         Saltar ›
       </button>
+      {/* Matrix rain effect */}
+      {showMatrix && <MatrixRain />}
+
       {/* CRT screen effect - enhanced */}
       <div className="absolute inset-0 pointer-events-none crt-effect">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent animate-pulse" />
