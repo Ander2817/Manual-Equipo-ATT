@@ -16,6 +16,7 @@ import { TeamSection } from '@/components/manual/TeamSection';
 import { GallerySection } from '@/components/manual/GallerySection';
 import { CreditsSection } from '@/components/manual/CreditsSection';
 import { Footer } from '@/components/manual/Footer';
+import { ScrollReveal } from '@/components/effects/ScrollReveal';
 
 const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -31,33 +32,29 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navbar - Fixed at top */}
       <Navbar 
         onSearch={() => {}} 
         onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
         isDarkMode={isDarkMode}
         onToggleDarkMode={() => setIsDarkMode(!isDarkMode)}
       />
-
-      {/* Off-canvas Sidebar */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {/* Main Content - Centered */}
       <main className="w-full" role="main">
         <Hero />
-        <CommunityInfoSection />
-        <IntroSection />
-        <SafetySection />
-        <MaintenanceGuideSection />
-        <ToolsSection />
-        <CommunitySection />
-        <ComponentsSection />
-        <ComponentFunctionsSection />
-        <CommonIssuesSection />
-        <GlossarySection />
-        <GallerySection />
-        <TeamSection />
-        <CreditsSection />
+        <ScrollReveal><CommunityInfoSection /></ScrollReveal>
+        <ScrollReveal direction="right" delay={80}><IntroSection /></ScrollReveal>
+        <ScrollReveal><SafetySection /></ScrollReveal>
+        <ScrollReveal direction="left" delay={80}><MaintenanceGuideSection /></ScrollReveal>
+        <ScrollReveal direction="scale"><ToolsSection /></ScrollReveal>
+        <ScrollReveal><CommunitySection /></ScrollReveal>
+        <ScrollReveal direction="right"><ComponentsSection /></ScrollReveal>
+        <ScrollReveal><ComponentFunctionsSection /></ScrollReveal>
+        <ScrollReveal direction="left"><CommonIssuesSection /></ScrollReveal>
+        <ScrollReveal direction="scale"><GlossarySection /></ScrollReveal>
+        <ScrollReveal><GallerySection /></ScrollReveal>
+        <ScrollReveal direction="right"><TeamSection /></ScrollReveal>
+        <ScrollReveal><CreditsSection /></ScrollReveal>
         <Footer />
       </main>
 
