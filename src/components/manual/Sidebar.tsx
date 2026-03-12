@@ -1,4 +1,4 @@
-import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award, Sparkles, Wrench, Shield } from 'lucide-react';
+import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award, Sparkles, Wrench, Shield, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
