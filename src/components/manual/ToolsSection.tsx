@@ -216,7 +216,7 @@ export const ToolsSection = () => {
           </div>
 
           {toolCategories.map((category) => (
-            <TabsContent key={category.id} value={category.id} className="mt-8 space-y-6">
+            <TabsContent key={category.id} value={category.id} className="space-y-6 animate-fade-in">
               {/* Category Description */}
               <Card className="border-2 shadow-xl">
                 <CardContent className="p-6">
