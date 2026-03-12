@@ -1,4 +1,4 @@
-import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award, Sparkles, Wrench, Shield } from 'lucide-react';
+import { X, Home, BookOpen, Users, Cpu, CheckSquare, FileText, GraduationCap, Award, Sparkles, Wrench, Shield, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -18,6 +18,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     { id: 'components', label: 'Componentes', icon: Cpu, color: 'from-cyan-500 to-blue-500' },
     { id: 'common-issues', label: 'Fallas Comunes', icon: CheckSquare, color: 'from-rose-500 to-red-500' },
     { id: 'glossary', label: 'Glosario de términos', icon: FileText, color: 'from-teal-500 to-green-500' },
+    { id: 'galeria', label: 'Galería', icon: Camera, color: 'from-pink-500 to-rose-500' },
     { id: 'team', label: 'Equipo', icon: GraduationCap, color: 'from-violet-500 to-purple-500' },
     { id: 'credits', label: 'Créditos y agradecimientos', icon: Award, color: 'from-yellow-500 to-orange-500' },
   ];

@@ -13,6 +13,7 @@ import ComponentFunctionsSection from '@/components/manual/ComponentFunctionsSec
 import { CommonIssuesSection } from '@/components/manual/CommonIssuesSection';
 import { GlossarySection } from '@/components/manual/GlossarySection';
 import { TeamSection } from '@/components/manual/TeamSection';
+import { GallerySection } from '@/components/manual/GallerySection';
 import { CreditsSection } from '@/components/manual/CreditsSection';
 import { Footer } from '@/components/manual/Footer';
 
@@ -54,6 +55,7 @@ const Index = () => {
         <ComponentFunctionsSection />
         <CommonIssuesSection />
         <GlossarySection />
+        <GallerySection />
         <TeamSection />
         <CreditsSection />
         <Footer />

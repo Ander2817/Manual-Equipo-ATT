@@ -13,7 +13,7 @@ export const TypewriterText = ({ text, speed = 50, delay = 0, className = '', on
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
     let index = 0;
 
     const startTyping = () => {
