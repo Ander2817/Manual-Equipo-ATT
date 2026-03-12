@@ -55,6 +55,7 @@ const Index = () => {
         <ComponentFunctionsSection />
         <CommonIssuesSection />
         <GlossarySection />
+        <GallerySection />
         <TeamSection />
         <CreditsSection />
         <Footer />
