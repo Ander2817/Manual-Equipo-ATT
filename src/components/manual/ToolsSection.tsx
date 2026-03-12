@@ -167,23 +167,53 @@ export const ToolsSection = () => {
           </p>
         </div>
 
-        {/* Interactive Tabs */}
+        {/* Interactive Tabs - Flat Design Navigation Bar */}
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 h-auto p-2 bg-muted/50">
-            {toolCategories.map((category) => {
-              const Icon = category.icon;
-              return (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className={`data-[state=active]:bg-gradient-to-r data-[state=active]:text-white data-[state=active]:shadow-lg flex flex-col items-center gap-2 py-4 px-2 ${category.color.replace('from-', 'data-[state=active]:from-').replace(' to-', ' data-[state=active]:to-')}`}
-                >
-                  <Icon className={`h-6 w-6 ${selectedCategory === category.id ? 'text-white' : category.iconColor}`} />
-                  <span className="text-sm font-medium">{category.title}</span>
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
+          <div className="bg-muted/30 rounded-2xl p-3 md:p-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {toolCategories.map((category) => {
+                const Icon = category.icon;
+                const isActive = selectedCategory === category.id;
+                const pastelBg: Record<string, string> = {
+                  ensamblaje: 'bg-blue-50 dark:bg-blue-950/40',
+                  diagnostico: 'bg-purple-50 dark:bg-purple-950/40',
+                  preventivo: 'bg-green-50 dark:bg-green-950/40',
+                  correctivo: 'bg-orange-50 dark:bg-orange-950/40',
+                  quimicos: 'bg-primary text-primary-foreground shadow-lg shadow-primary/30',
+                };
+                const pastelIcon: Record<string, string> = {
+                  ensamblaje: 'text-blue-600 dark:text-blue-400',
+                  diagnostico: 'text-purple-600 dark:text-purple-400',
+                  preventivo: 'text-green-600 dark:text-green-400',
+                  correctivo: 'text-orange-600 dark:text-orange-400',
+                  quimicos: 'text-primary-foreground',
+                };
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`relative flex flex-col items-center gap-2.5 py-5 px-3 rounded-xl transition-all duration-300 font-medium
+                      ${category.id === 'quimicos'
+                        ? (isActive
+                          ? 'bg-primary text-primary-foreground shadow-xl shadow-primary/40 scale-[1.03]'
+                          : 'bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:scale-[1.02]')
+                        : (isActive
+                          ? `${pastelBg[category.id]} ring-2 ring-offset-2 ring-offset-background shadow-md scale-[1.03] ${category.id === 'ensamblaje' ? 'ring-blue-400' : category.id === 'diagnostico' ? 'ring-purple-400' : category.id === 'preventivo' ? 'ring-green-400' : 'ring-orange-400'}`
+                          : `${pastelBg[category.id]} hover:shadow-md hover:scale-[1.02]`)
+                      }`}
+                  >
+                    <Icon className={`h-6 w-6 transition-transform duration-300 ${isActive ? 'scale-110' : ''} ${category.id === 'quimicos' ? 'text-primary-foreground' : pastelIcon[category.id]}`} />
+                    <span className={`text-sm ${category.id === 'quimicos' ? 'text-primary-foreground' : 'text-foreground'}`}>
+                      {category.title}
+                    </span>
+                    {isActive && category.id !== 'quimicos' && (
+                      <span className={`absolute bottom-1.5 w-6 h-1 rounded-full ${category.id === 'ensamblaje' ? 'bg-blue-500' : category.id === 'diagnostico' ? 'bg-purple-500' : category.id === 'preventivo' ? 'bg-green-500' : 'bg-orange-500'}`} />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           {toolCategories.map((category) => (
             <TabsContent key={category.id} value={category.id} className="mt-8 space-y-6">
