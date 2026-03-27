@@ -125,7 +125,7 @@ export const MaintenanceGuideSection = () => {
             Guía para el Mantenimiento
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Procedimientos detallados paso a paso para realizar mantenimiento preventivo y correctivo en computadoras
+            Procedimientos detallados paso a paso para realizar Mantenimiento Preventivo y Correctivo en computadoras
           </p>
         </div>
 

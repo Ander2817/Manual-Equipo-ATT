@@ -40,7 +40,7 @@ const safetyRules = [
   },
   {
     number: 7,
-    title: 'No realizar mantenimiento con el equipo encendido',
+    title: 'No realizar Mantenimiento con el equipo encendido',
     description: 'Cualquier limpieza, revisión interna o conexión debe hacerse con el dispositivo totalmente apagado.',
     objetivo: 'Eliminar el riesgo de cortocircuitos, descargas eléctricas y daños a componentes por manipulación en caliente.'
   },

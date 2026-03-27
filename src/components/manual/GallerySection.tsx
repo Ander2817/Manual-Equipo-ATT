@@ -14,15 +14,15 @@ import gallery8 from '@/assets/gallery-8.jpg';
 import gallery9 from '@/assets/gallery-9.webp';
 
 const galleryItems = [
-  { src: gallery1, alt: 'Equipos Lenovo preparados para mantenimiento', description: 'Equipos de escritorio Lenovo listos para ser intervenidos sobre las mesas de trabajo.' },
+  { src: gallery1, alt: 'Equipos Lenovo preparados para Mantenimiento', description: 'Equipos de escritorio Lenovo listos para ser intervenidos sobre las mesas de trabajo.' },
   { src: gallery2, alt: 'Gabinetes abiertos mostrando componentes internos', description: 'Los gabinetes fueron abiertos para inspeccionar y limpiar los componentes internos.' },
-  { src: gallery3, alt: 'Estudiante realizando mantenimiento preventivo', description: 'Estudiante desmontando componentes para realizar limpieza interna del equipo.' },
+  { src: gallery3, alt: 'Estudiante realizando Mantenimiento Preventivo', description: 'Estudiante desmontando componentes para realizar limpieza interna del equipo.' },
   { src: gallery4, alt: 'Revisión detallada de hardware interno', description: 'Revisión minuciosa de los cables y conexiones internas del computador.' },
   { src: gallery5, alt: 'Estudiante manipulando componentes del PC', description: 'Trabajo práctico de desmontaje y verificación de la fuente de poder y ventiladores.' },
   { src: gallery6, alt: 'Instalación de Windows 7 Ultimate', description: 'Proceso de instalación del sistema operativo Windows 7 Ultimate en uno de los equipos.' },
   { src: gallery7, alt: 'Estudiante configurando el sistema operativo', description: 'Configuración inicial del sistema operativo después de la instalación.' },
   { src: gallery8, alt: 'Conexión del cableado de los equipos', description: 'Estudiante organizando y conectando el cableado de alimentación y datos.' },
-  { src: gallery9, alt: 'Estudiante trabajando en el laboratorio', description: 'Sesión de trabajo en el laboratorio de informática durante el mantenimiento.' },
+  { src: gallery9, alt: 'Estudiante trabajando en el laboratorio', description: 'Sesión de trabajo en el laboratorio de informática durante el Mantenimiento.' },
 ];
 
 export const GallerySection = () => {
@@ -38,7 +38,7 @@ export const GallerySection = () => {
         </div>
 
         <p className={`text-muted-foreground mb-10 max-w-3xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          Registro fotográfico y en video del proceso de mantenimiento preventivo y correctivo realizado a los equipos del laboratorio de informática.
+          Registro fotográfico y en video del proceso de Mantenimiento Preventivo y Correctivo realizado a los equipos del laboratorio de informática.
         </p>
 
         {/* Photo Grid */}

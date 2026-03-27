@@ -14,7 +14,7 @@ export const IntroSection = () => {
       title: 'Mantenimiento Preventivo',
       icon: Shield,
       description: 'Acciones planificadas para evitar fallas antes de que ocurran.',
-      details: 'El mantenimiento preventivo incluye inspecciones regulares, lubricación, ajustes y reemplazo de componentes según calendario. Ayuda a extender la vida útil de los equipos y reducir costos a largo plazo.',
+      details: 'El Mantenimiento Preventivo incluye inspecciones regulares, lubricación, ajustes y reemplazo de componentes según calendario. Ayuda a extender la vida útil de los equipos y reducir costos a largo plazo.',
       benefits: ['Reduce paradas inesperadas', 'Aumenta vida útil', 'Mejora seguridad', 'Optimiza costos'],
       color: 'from-green-500 to-emerald-500',
     },
@@ -23,7 +23,7 @@ export const IntroSection = () => {
       title: 'Mantenimiento Correctivo',
       icon: Wrench,
       description: 'Reparaciones realizadas después de detectar una falla o avería.',
-      details: 'Este tipo de mantenimiento se aplica cuando un equipo ya ha fallado. Incluye diagnóstico del problema, reparación o reemplazo de componentes dañados y pruebas de funcionamiento.',
+      details: 'Este tipo de Mantenimiento se aplica cuando un equipo ya ha fallado. Incluye diagnóstico del problema, reparación o reemplazo de componentes dañados y pruebas de funcionamiento.',
       benefits: ['Restaura funcionalidad', 'Soluciona problemas inmediatos', 'Aprende de fallas', 'Actualiza registros'],
       color: 'from-orange-500 to-red-500',
     },
@@ -58,7 +58,7 @@ export const IntroSection = () => {
             ¿Qué es el mantenimiento?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            El mantenimiento es el conjunto de acciones necesarias para conservar o restablecer un equipo 
+            El Mantenimiento es el conjunto de acciones necesarias para conservar o restablecer un equipo 
             o instalación en condiciones óptimas de funcionamiento, seguridad y eficiencia.
           </p>
         </div>
@@ -76,7 +76,7 @@ export const IntroSection = () => {
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Importancia del Mantenimiento</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Un programa de mantenimiento bien estructurado garantiza la continuidad operativa, 
+                  Un programa de Mantenimiento bien estructurado garantiza la continuidad operativa, 
                   prolonga la vida útil de los activos, reduce costos operativos y, lo más importante, 
                   protege la seguridad de las personas que utilizan las instalaciones.
                 </p>

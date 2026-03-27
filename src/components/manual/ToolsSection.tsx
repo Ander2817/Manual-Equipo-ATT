@@ -78,7 +78,7 @@ const toolCategories = [
     icon: Shield,
     color: 'from-green-500 to-emerald-500',
     iconColor: 'text-green-500',
-    description: 'Herramientas utilizadas para prevenir el surgimiento de averías mediante mantenimiento regular y cuidado preventivo.',
+    description: 'Herramientas utilizadas para prevenir el surgimiento de averías mediante Mantenimiento regular y cuidado Preventivo.',
     tools: [
       {
         name: 'Herramientas de Limpieza',
@@ -128,7 +128,7 @@ const toolCategories = [
     icon: Droplets,
     color: 'from-indigo-500 to-purple-500',
     iconColor: 'text-indigo-500',
-    description: 'Productos químicos especializados que complementan el mantenimiento necesario para mantener el equipo en óptimas condiciones.',
+    description: 'Productos químicos especializados que complementan el Mantenimiento necesario para mantener el equipo en óptimas condiciones.',
     tools: [
       {
         name: 'Alcohol Isopropílico',
@@ -161,7 +161,7 @@ export const ToolsSection = () => {
             Herramientas para Mantenimiento de PC
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            El mantenimiento efectivo de equipos de cómputo requiere herramientas especializadas para cada tipo de intervención. 
+            El Mantenimiento efectivo de equipos de cómputo requiere herramientas especializadas para cada tipo de intervención. 
             Desde el ensamblaje básico hasta reparaciones avanzadas, cada herramienta cumple una función específica que garantiza 
             un trabajo seguro, eficiente y profesional. Conoce las herramientas esenciales organizadas por su aplicación.
           </p>
