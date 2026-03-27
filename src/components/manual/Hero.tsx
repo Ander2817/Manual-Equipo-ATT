@@ -141,7 +141,7 @@ export const Hero = () => {
 
           {/* Subtitle */}
           <p className={`text-lg sm:text-xl md:text-2xl text-white/85 max-w-3xl mx-auto leading-relaxed font-light transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-            Guía completa para el mantenimiento preventivo y correctivo de equipos e instalaciones comunitarias
+            Guía completa para el Mantenimiento Preventivo y Correctivo de equipos e instalaciones comunitarias
           </p>
 
           {/* Stats row - Enhanced */}
